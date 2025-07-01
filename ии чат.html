@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ ассистент</title>
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #ad0505;
+            --dark: #2c3e50;
+            --light: #f5f5f5;
+            --ai-bubble: #f1f1f1;
+            --user-bubble: #6e48aa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1.2rem;
+            border-radius: 1rem;
+            line-height: 1.5;
+        }
+        
+        .ai-message {
+            align-self: flex-start;
+            background-color: var(--ai-bubble);
+            border-top-left-radius: 0;
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background-color: var(--user-bubble);
+            color: white;
+            border-top-right-radius: 0;
+        }
+        
+        .input-area {
+            display: flex;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 2rem;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 2rem;
+            padding: 0 1.5rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: var(--secondary);
+        }
+        
+        .typing-indicator {
+            display: flex;
+            padding: 0.5rem 1rem;
+            align-self: flex-start;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #999;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        @media (max-width: 600px) {
+            .message {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ИИ ассистент</h1>
+    </header>
+    
+    <div class="chat-container">
+        <div class="messages" id="messages">
+            <div class="message ai-message">
+                Сәлеметсіз бе! Мен сізге қалай көмектесе аламын?
+            </div>
+            
+            <!-- Мысал әңгіме -->
+            <!--
+            <div class="message user-message">
+                Сәлем! Жақсысыз ба?
+            </div>
+            <div class="message ai-message">
+                Рахмет, жақсымын! Сіз қалайсыз?
+            </div>
+            -->
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Хабарламаңызды жазңыз..." autocomplete="off">
+            <button id="send-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const messagesContainer = document.getElementById('messages');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        
+        // Хабарлама жіберу функциясы
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+            
+            // Пайдаланушы хабарламасын көрсету
+            addMessage(message, 'user');
+            userInput.value = '';
+            
+            // ИИ жауабын көрсету (мысал)
+            setTimeout(() => {
+                showTypingIndicator();
+                
+                setTimeout(() => {
+                    removeTypingIndicator();
+                    const responses = [
+                        "Мен сіздің сұрағыңызды түсіндім.",
+                        "Бұл қызықты сұрақ!",
+                        "Келесідей жауап бере аламын...",
+                        "Рахмет сұрағыңыз үшін!"
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse, 'ai');
+                }, 1500);
+            }, 500);
+        }
+        
+        // Хабарлама қосу функциясы
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', ${sender}-message);
+            messageDiv.textContent = text;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        // Жазу индикаторын көрсету
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing-indicator');
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            `;
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        // Жазу индикаторын жою
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+        
+        // Түймелерге іс-қимылдарды қосу
+        sendBtn.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

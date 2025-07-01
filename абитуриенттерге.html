@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Түркістан Болашақ Колледжі</title>
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #860000;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #000000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #000000;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: var();
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('university.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .program-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .program-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .program-card p {
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+        
+        .deadlines {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        
+        .deadlines th, .deadlines td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .deadlines th {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Абитуриенттер порталы</a>
+            <ul class="nav-links">
+                <li><a href="index.html">БАСТЫ БЕТ</a></li>
+                <li><a href="#admission">Қабылдау</a></li>
+                <li><a href="#deadlines">Мерзімдер</a></li>
+                <li><a href="#contact">Байланыс</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Білім жолыңыз осыдан басталады</h1>
+                <p>2024-2025 оқу жылына қабылдау басталды</p>
+                <a href="#admission" class="btn">Қабылдау талаптары</a>
+            </div>
+        </div>
+        
+        <section id="admission" class="section">
+            <h2>Қабылдау талаптары</h2>
+            <p>Біздің университетке түсу үшін келесі құжаттарды ұсыну қажет:</p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>ҰБТ нәтижелері (немесе теңестіру тестілері)</li>
+                <li>Туу туралы куәлік (көшірме)</li>
+                <li>Білімі туралы куәлік (түпнұсқа)</li>
+                <li>3x4 өлшемді фотосуреттер (4 дана)</li>
+                <li>Денсаулық туралы анықтама (форма 086-У)</li>
+            </ul>
+            <p>Қабылдау комиссиясы жұмыс істейтін уақыт: Дүйсенбі-Жұма, 09:00-18:00</p>
+        </section>
+        
+        <section id="deadlines" class="section">
+            <h2>Қабылдау мерзімдері</h2>
+            <table class="deadlines">
+                <thead>
+                    <tr>
+                        <th>Кезең</th>
+                        <th>Мерзімі</th>
+                        <th>Ескерту</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Құжаттарды қабылдау басталуы</td>
+                        <td>20 маусым</td>
+                        <td>Барлық бағыттар бойынша</td>
+                    </tr>
+                    <tr>
+                        <td>ҰБТ нәтижелерін қабылдау</td>
+                        <td>1 шілде - 25 шілде</td>
+                        <td>Минималды балл - 65</td>
+                    </tr>
+                    <tr>
+                        <td>Қабылдау аяқталуы</td>
+                        <td>10 тамыз</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>Байланыс ақпараты</h2>
+            <div class="programs">
+                <div class="program-card">
+                    <h3>Қабылдау комиссиясы</h3>
+                    <p><i class="fas fa-phone"></i> 8(725333)3-30-74</p>
+                    <p><i class="fas fa-envelope"></i>k_bolashak@mail.ru</p>
+                </div>
+                
+                <div class="program-card">
+                    <h3>Мекен-жайы</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Түркістан қаласы,Есім хан алаңы №3</p>
+                    <p><i class="fas fa-clock"></i> Дүйсенбі-Жұма 09:00-18:00</p>
+                </div>
+                
+                <div class="program-card">
+                    <h3>Әлеуметтік желілер</h3>
+                    <p><i class="fab fa-instagram"></i> @bolashak_college</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Абитуриенттер порталы</h3>
+                <p>2023-2024 оқу жылына қабылдау</p>
+            </div>
+            
+            
+            <div>
+                <h3>Байланыс</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:+872533333074">8(725333)3-30-74</a></li>
+                    <li><a href="k_bolashak@mail.ru">k_bolashak@mail.ru</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Абитуриенттер порталы. Барлық құқықтар қорғалған.</p>
+        </div>
+    </footer>
+</body>
+</html>

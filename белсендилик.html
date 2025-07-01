@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Түркістан Болашақ Колледжі</title>
+    <style>
+        :root {
+            --primary: #690000;
+            --secondary: #ff0b0b;
+            --light: #ecf0f1;
+            --dark: #000000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 1rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Колледж белсенділігі</h1>
+        <p>Студенттік өмірдің маңызды бөлігі</p>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                     <li><a href="index.html">БАСТЫ БЕТ</a></li>
+                <li><a href="#about">Біз туралы</a></li>
+                <li><a href="#benefits">Артықшылықтары</a></li>
+                <li><a href="#contact">Байланыс</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="about" class="section">
+            <h2>Біз туралы</h2>
+            <p>Колледжіміздің белсенділік бағдарламасы студенттердің жеке дамуына және қоғамдық қызметке ықпал етеді. Біз студенттердің әртүрлі қызығушылықтарын қолдаймыз және олардың шығармашылық қабілеттерін дамытуға мүмкіндік береміз.</p>
+            <p>Белсенділік бағдарламасына қатысу арқылы студенттер командалық жұмыс дағдыларын, лидерлік қасиеттерін және уақытты тиімді басқару дағдыларын дамытады.</p>
+        </section>
+        
+        <section id="benefits" class="section">
+            <h2>Артықшылықтары</h2>
+            <ul>
+                <li>Жеке дамуға мүмкіндік</li>
+                <li>Жаңа дағдыларды игеру</li>
+                <li>Командалық жұмыс тәжірибесі</li>
+                <li>Әлеуметтік желі құру</li>
+                <li>Дипломнан тыс қосымша жетістіктер</li>
+            </ul>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>Байланыс</h2>
+            <p><strong>Телефон:</strong>8(72533)3-30-74 </p>
+            <p><strong>Электронды пошта:</strong>k_bolashak@mail.ru</p>
+            <p><strong>Жұмыс сағаттары:</strong> Дүйсенбі-Жұма 9:00-18:00</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Колледж белсенділігі. Барлық құқықтар қорғалған.</p>
+    </footer>
+</body>
+</html>

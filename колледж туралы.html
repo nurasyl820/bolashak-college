@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Түркістан Болашақ Колледжі</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #00000075;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #960000;
+            color: rgb(255, 255, 255);
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #000000;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #b42a2a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgb(240, 46, 46);
+        }
+        
+        .section h2 {
+            color: #000000;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #000000;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+        
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-card {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Біздің колледж</h1>
+        <p>Білім берудегі жетекші оқу орны</p>
+    </header>
+    
+    <nav>
+        <ul>
+                 <li><a href="index.html">БАСТЫ БЕТ</a></li>
+            <li><a href="#about">Колледж туралы</a></li>
+            <li><a href="#programs">Бағдарламалар</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#contact">Байланыс</a></li>       
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="about" class="section">
+            <h2>Колледж туралы</h2>
+            <p>Колледж 2006 жылы «Болашақ» колледжі деген атпен ашылып, АБ сериялы № 0038291 мемлекеттік лицензиясы шектеусіз мерзімге берілген.
+«Түркістан Болашақ» жоғары көпсалалы колледжі 7 мамандық, 10 біліктілік бойынша мамандар даярлайтын аймақтағы бәсекеге қабілетті 18-19
+жылдық тарихы бар заманауи үлгідегі кәсіби білім мекемесі.Біздің колледж оқу сапасымен танымал. Біз студенттерге кәсіби білім берудің жоғары деңгейін ұсынамыз.</p>
+            <p>Колледжде тәжірибелі оқытушылар қызмет етеді, олар әрбір студенттің жетістіктеріне жетуіне көмектеседі. Біздің мақсатымыз - болашақ мамандарды даярлау.</p>
+        </section>
+        
+        <section id="programs" class="section">
+            <h2>Оқу бағдарламалары</h2>
+            <p>Біз келесі бағыттар бойынша білім береміз:</p>
+            <ul>
+                <li>Бастауыш білім беру педогогикасы,әдістемесі</li>
+                <li>Банк және сақтандыру ісі</li>
+                <li>Есеп және аудит</li>
+                <li>Бағдарламалық қамтамасыз ету</li>
+                <li>Мектепке дейінгі тәрбие және оқыту</li>
+                <li>Дене тәрбиесі және спорт</li>
+                <li>Құқықтану</li> 
+                <li>Автомобиль көлігіне техникалық қызмет көрсету,жөндеу және пайдалану</li>
+                <li>Дәнекерлеу ісі</li>
+                <li>Тамақтандыруды ұйымдастыру</li>
+            </ul>
+            <p>Барлық бағдарламалар мемлекеттік білім стандарттарына сәйкес жасалған.</p>
+        </section>
+        
+        <section id="gallery" class="section">
+            <h2>Колледж галереясы</h2>
+            <div class="gallery">
+                <img src="Главный корпус.jpeg" alt="Колледж ғимараты">
+                <img src="9898.jpeg" alt="Сынып бөлмесі">
+                <img src="8989.jpeg" alt="Кітапхана">
+                <img src="7878.jpeg" alt="Зертхана">
+                <img src="6767.jpeg" alt="Оқу іс-шарасы">
+                <img src="8787 .jpeg" alt="Түлектер">
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>Байланыс ақпараты</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Мекен-жайы</h3>
+                    <p>Түркістан қаласы,Есімхан алаңы,3,С.Қожанов,15.Контингент</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Телефон</h3>
+                    <p>8(72533)3-30-74</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Электронды пошта</h3>
+                    <p>k_bolashak@mail.ru</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Жұмыс сағаттары</h3>
+                    <p>Дүйсенбі-Жұма: 9:00 - 18:00</p>
+                    <p>Сенбі: 10:00 - 15:00</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Біздің колледж. Барлық құқықтар қорғалған.</p>
+    </footer>
+</body>
+</html>
